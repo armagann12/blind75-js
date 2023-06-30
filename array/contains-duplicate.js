@@ -1,3 +1,7 @@
+// 217. Contains Duplicate
+// https://leetcode.com/problems/contains-duplicate/
+
+
 // Using nested for loops (Brute force)
 // O(n^2)
 var containsDuplicate = function (nums) {

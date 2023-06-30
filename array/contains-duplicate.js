@@ -11,7 +11,24 @@ var containsDuplicate = function (nums) {
     return false
 };
 
+//Using a hashmap
+var containsDuplicateAlt = (nums) =>{
+    map = {}
+    for(var i in nums){
+        if(map[nums[i]] === 1){
+            return true
+        }else{
+            map[nums[i]] = 1
+        }
+    }
+    return false
+}
+
 var nums = [1, 2, 3, 1]
 var res = containsDuplicate(nums)
 
 console.log(res, "res")
+
+var resAlt = containsDuplicateAlt(nums)
+
+console.log(resAlt)

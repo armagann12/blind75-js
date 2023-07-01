@@ -23,7 +23,8 @@ var maxProfit = (prices) => {
 // O(n) ? 
 // With a loop collect the difs and append to array
 // Get the max profit from that array
-// Leetcode passed (bad solution)
+// Leetcode passed
+// Similar to optimal but needs more thinking for edge case to prevent adding it to array 
 var maxProfitAlt = (prices) => {
     min = 10001
     max = 0
@@ -48,9 +49,32 @@ var maxProfitAlt = (prices) => {
     return maxProfit
 }
 
+// Two Pointer technique
+// Sliding window !!
+// O(n) optimal
+// With one for loop: if l < r check for max else slide l to r
+// Whatever happense slide r to one at the end 
 
-var prices = [7,6,4,3,1]
+var maxProfitAlt2 = (prices) => {
+    var max = 0
+    var left = 0
+    var right = 1
+    for (var i = 0; i < prices.length - 1; i++) {
+        if (prices[left] < prices[right]) {
+            dif = prices[right] - prices[left]
+            if (dif > max) {
+                max = dif
+            }
+        } else {
+            left = right
+        }
+        right++
+    }
+    return max
+}
 
-var res = maxProfitAlt(prices)
+var prices = [7, 1, 5, 3, 6, 4]
+
+var res = maxProfitAlt2(prices)
 
 console.log(res)

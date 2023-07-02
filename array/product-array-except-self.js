@@ -85,8 +85,26 @@ var productExceptSelfAlt2 = (nums) => {
     return arr
 }
 
+// Same as the abopve one but without if clause or -1 +1 statemets (Refactored)
+var productExceptSelfAlt3 = (nums) => {
+    arr = []
+    prefix = 1
+    for (var i = 0; i < nums.length; i++) {
+        arr[i] = 1
+        arr[i] = prefix
+        prefix *=nums[i]
+    }
+
+    postfix = 1
+    for (var j = nums.length - 1; j >= 0; j--) {
+        arr[j] *= postfix
+        postfix *= nums[j]
+    }
+    return arr
+}
+
 var nums = [1, 2, 3, 4]
 
-var res = productExceptSelfAlt2(nums)
+var res = productExceptSelfAlt3(nums)
 
 console.log(res)

@@ -91,8 +91,8 @@ var productExceptSelfAlt3 = (nums) => {
     prefix = 1
     for (var i = 0; i < nums.length; i++) {
         arr[i] = 1
-        arr[i] = prefix
-        prefix *=nums[i]
+        arr[i] = prefix 
+        prefix *=nums[i] // Because we increment after the loop
     }
 
     postfix = 1

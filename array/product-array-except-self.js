@@ -34,7 +34,7 @@ var productExceptSelfAlt = (nums) => {
     var pre = []
     var post = []
 
-    for (var i = 0; i< nums.length; i++) {
+    for (var i = 0; i < nums.length; i++) {
         pre[i] = nums[i]
         if (i != 0) {
             pre[i] *= pre[i - 1]
@@ -46,7 +46,7 @@ var productExceptSelfAlt = (nums) => {
             post[i] *= post[i + 1]
         }
     }
-    for (var i = 0; i<nums.length; i++) {
+    for (var i = 0; i < nums.length; i++) {
         var postVal = 1
         var preVal = 1
         if (i != 0) {
@@ -60,12 +60,33 @@ var productExceptSelfAlt = (nums) => {
     return arr
 }
 
-var productExceptSelfAlt2 = (nums) => {
+// Similar to the above solution
+// With 2 for loops first set the before values to arr but doing that also muliply by the last value that is been set to arr
+// Than with the second loop do the same with reverse but this time use a variable because the arr is not just 1 now
+// O(n)
+// You can always use two for loops its always better than nested for loop
 
+var productExceptSelfAlt2 = (nums) => {
+    arr = []
+    for (var i = 0; i < nums.length; i++) {
+        arr[i] = 1
+        if (i != 0) {
+            arr[i] *= arr[i - 1] * nums[i - 1]
+        }
+    }
+
+    var post = 1
+    for (var j = nums.length - 1; j >= 0; j--) {
+        if (j != nums.length - 1){
+            post *= nums[j + 1]
+            arr[j] *= post
+        }
+    }
+    return arr
 }
 
 var nums = [1, 2, 3, 4]
 
-var res = productExceptSelfAlt(nums)
+var res = productExceptSelfAlt2(nums)
 
 console.log(res)

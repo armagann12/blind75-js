@@ -3,7 +3,7 @@
 // Brute force
 // Time Limit exceeded 
 // O(n^2)
-
+// You can also refactor this as well
 var maxSubArray = (nums) => {
     var max = nums[0]
     for (var i = 0; i < nums.length; i++) {
@@ -21,9 +21,27 @@ var maxSubArray = (nums) => {
     return max
 };
 
+// Sliding window type solution
+// O(n)
+// This works because if sum gets less than 0 we reset the sum and check for max along the way
+var maxSubArrayAlt = (nums) => {
+    var max = nums[0]
+    var sum = 0
+    for (var i = 0; i < nums.length; i++) {
+        if (sum < 0){
+            sum = 0
+        }
+        sum += nums[i]
+        if(max < sum){
+            max = sum
+        }
+    }
+    return max
+}
+
 
 var nums = [-2,1,-3,4,-1,2,1,-5,4]
 
-var res = maxSubArray(nums)
+var res = maxSubArrayAlt(nums)
 
 console.log(res)

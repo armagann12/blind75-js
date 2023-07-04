@@ -21,9 +21,27 @@ var maxProduct = (nums) => {
     return max
 };
 
-var nums = [2, 3, -2, 4]
+// Dynamic Programming -Greedy? 
+// O(n)
+var maxProductAlt = (nums) => {
+    var res = nums[0]
+    var min = 1
+    var max = 1
 
-res = maxProduct(nums)
+    for (var i = 0; i < nums.length; i++) {
+        const minProduct = min * nums[i]
+        const maxProduct = max * nums[i]
+
+        min = Math.min(maxProduct, minProduct, nums[i]);
+        max = Math.max(maxProduct, minProduct, nums[i]);
+
+        res = Math.max(res, max);
+    }
+    return res
+}
+
+var nums = [2, 3, -2, 4]
+res = maxProductAlt(nums)
 console.log(res)
 
 

@@ -1,0 +1,2 @@
+With arrays you have to understand how can you optimize the solution with a trick,
+even before you start writing the code

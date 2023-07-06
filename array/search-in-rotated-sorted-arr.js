@@ -51,6 +51,10 @@ var searchAlt = (nums, target) => {
 }
 
 
+//You can also refactor this 
+// With no left right check and adding & statement to if conditions
+
+
 var nums = [7, 8, 1, 2, 3, 4, 5, 6]
 var target = 2
 

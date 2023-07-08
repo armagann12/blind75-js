@@ -26,6 +26,29 @@ var maxArea = (height) => {
     return area
 };
 
+// Optimal Solution with left right pointer similar to above one
+// O(n)
+
+var maxAreaAlt = (height) => {
+    var area = 0
+    var left = 0
+    var right = height.length - 1
+    while (left < right) {
+        var x = right - left
+        if (height[left] > height[right]) {
+            var y = height[right]
+            right--
+        } else {
+            var y = height[left]
+            left++
+        }
+        if ((x * y) > area) {
+            area = x * y
+        }
+    }
+    return area
+}
+
 var height = [1, 8, 6, 2, 5, 4, 8, 3, 7]
-var res = maxArea(height)
+var res = maxAreaAlt(height)
 console.log(res)

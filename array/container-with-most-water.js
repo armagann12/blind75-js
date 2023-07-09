@@ -1,6 +1,6 @@
 // 11. Container With Most Water
 // https://leetcode.com/problems/container-with-most-water/
-
+// Done
 
 // Brute force with 2 loops
 // O(n^2)
@@ -26,6 +26,7 @@ var maxArea = (height) => {
     return area
 };
 
+// Two pointer
 // Optimal Solution with left right pointer similar to above one
 // O(n)
 

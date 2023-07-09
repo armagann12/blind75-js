@@ -39,7 +39,7 @@ var maxSubArrayAlt = (nums) => {
     return max
 }
 
-// Divide and Counquer??
+// TODO Divide and Counquer impl
 
 
 var nums = [-2,1,-3,4,-1,2,1,-5,4]

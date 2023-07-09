@@ -1,6 +1,6 @@
 // 121. Best Time to Buy and Sell Stock
 // https://leetcode.com/problems/best-time-to-buy-and-sell-stock/
-
+// Done
 
 // Brute Force 
 // O(n^2)
@@ -49,8 +49,7 @@ var maxProfitAlt = (prices) => {
     return maxProfit
 }
 
-// Two Pointer technique
-// Sliding window !!
+// Sliding window using two pointers
 // O(n) optimal
 // With one for loop: if l < r check for max else slide l to r
 // Whatever happense slide r to one at the end 

@@ -1,5 +1,6 @@
 // 152. Maximum Product Subarray
 // https://leetcode.com/problems/maximum-product-subarray/
+// Done
 
 // Brute Force
 // O(n^2)
@@ -21,7 +22,8 @@ var maxProduct = (nums) => {
     return max
 };
 
-// Dynamic Programming -Greedy? 
+// Dynamic Programming
+// This is a greedy algorithm because it try to get the max product every step of the way
 // O(n)
 var maxProductAlt = (nums) => {
     var res = nums[0]

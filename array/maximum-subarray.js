@@ -1,5 +1,7 @@
 // 53. Maximum Subarray
 // https://leetcode.com/problems/maximum-subarray/
+// TODO -> Divide and Counquer
+
 // Brute force
 // Time Limit exceeded 
 // O(n^2)

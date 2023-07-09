@@ -3,3 +3,14 @@ even before you start writing the code
 
 Arrays:
 https://www.techinterviewhandbook.org/algorithms/array/
+
+
+Techniques:
+
+-Sliding window
+-Two pointers
+-Traversing from the right
+-Sorting the array
+-Precomputation --> using hashing or a prefix/suffix sum/product 
+-Index as a hash key
+-Traversing the array more than once

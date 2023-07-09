@@ -1,5 +1,6 @@
 // 33. Search in Rotated Sorted Array
 // https://leetcode.com/problems/search-in-rotated-sorted-array/
+// Done
 
 // O(n) solution using a for loop
 var search = (nums, target) => {
@@ -12,7 +13,7 @@ var search = (nums, target) => {
     return res
 };
 
-// O(log n) Bianry search using comparison logic
+// O(log n) Binary search using comparison logic
 // My solution
 var searchAlt = (nums, target) => {
     var res = -1

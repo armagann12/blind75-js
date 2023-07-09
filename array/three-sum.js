@@ -1,5 +1,6 @@
 // 15. 3Sum
 // https://leetcode.com/problems/3sum/
+// Done
 
 // Also solve twoSum II
 
@@ -8,7 +9,7 @@
 // Leetcode not passed because [0,0,0,0]
 var threeSum = (nums) => {
     var arr = []
-    var sortedNums = nums.sort() // Do it also with sorting algorithms
+    var sortedNums = nums.sort((a,b) => a-b) // Do it also with sorting algorithms
 
     for (var i = 0; i < sortedNums.length - 2; i++) {
         if (i > 0 && sortedNums[i] === sortedNums[i - 1]) {
@@ -31,7 +32,7 @@ var threeSum = (nums) => {
 // Leetcode not passed because [0,0,0,0]
 var threeSumAlt = (nums) => {
     var arr = []
-    var sortedNums = nums.sort()
+    var sortedNums = nums.sort((a,b) => a-b)
 
     for (var i = 0; i < sortedNums.length - 1; i++) {
         var map = {}
@@ -53,10 +54,9 @@ var threeSumAlt = (nums) => {
 
 // Using one element and doing two sum II (using left right pointer)
 // O(n^2)
-// Not passed
 var threeSumAlt2 = (nums) => {
     var arr = []
-    var sortedNums = nums.sort()
+    var sortedNums = nums.sort((a,b) => a-b)
 
     for (var i = 0; i < sortedNums.length - 1; i++) {
         if (i > 0 && sortedNums[i] === sortedNums[i - 1]) {
@@ -68,14 +68,14 @@ var threeSumAlt2 = (nums) => {
         while (left < right) {
             var sum = sortedNums[i] + sortedNums[left] + sortedNums[right]
             if (sum > 0) {
-                right -= 1
+                right--
             } else if (sum < 0) {
-                left += 1
+                left++
             } else {
                 arr.push([sortedNums[i], sortedNums[left], sortedNums[right]])
-                left += 1
+                left++
                 while (sortedNums[left] === sortedNums[left - 1] && left < right){
-                    left += 1
+                    left++
                 }
             }
         }
@@ -88,5 +88,5 @@ var nums = [-1,0,1,2,-1,-4,-2,-3,3,0,4]
 
 
 
-var res = threeSumAlt(nums)
+var res = threeSumAlt2(nums)
 console.log(res)

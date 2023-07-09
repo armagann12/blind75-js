@@ -1,5 +1,6 @@
 // 238. Product of Array Except Self
 // https://leetcode.com/problems/product-of-array-except-self/
+// Done
 
 // Nested for loops (Brute)
 // Leetcode Error Time limit exceeded
@@ -94,6 +95,8 @@ var productExceptSelfAlt3 = (nums) => {
         arr[i] = prefix 
         prefix *=nums[i] // Because we increment after the loop
     }
+
+    console.log(arr)
 
     postfix = 1
     for (var j = nums.length - 1; j >= 0; j--) {

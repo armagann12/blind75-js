@@ -1,1 +1,4 @@
 Understanding bit manipulation and bitwise operators
+
+Binary:
+https://www.techinterviewhandbook.org/algorithms/binary/

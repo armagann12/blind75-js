@@ -1,5 +1,6 @@
 // 153. Find Minimum in Rotated Sorted Array
 // https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/
+// Done
 
 // O(n) solution
 // Looping through all of the array and finding the smallest
@@ -29,7 +30,7 @@ var findMinAlt = (nums) => {
 
 // O(log n) solution Binary Search
 
-var findMin = (nums) => {
+var findMinAlt2 = (nums) => {
     var min = nums[0]
     var left = 0
     var right = nums.length - 1

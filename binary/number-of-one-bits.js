@@ -28,6 +28,19 @@ var hammingWeight2 = function (n) {
     return res
 }
 
+// Another Solution: (Hard)
+// This works because when we substract 1 from it and do a & operation it will get rid of 1 bit
+// So every time it get rids of 1 and add's to the response
+
+var hammingWeight3 = function (n) {
+    var res = 0
+    while (n !== 0) {
+        n = n & (n - 1)
+        res++
+    }
+    return res
+}
+
 var n = 128
-var res = hammingWeight2(n)
+var res = hammingWeight3(n)
 console.log(res)

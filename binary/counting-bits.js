@@ -1,6 +1,7 @@
 // 338. Counting Bits
 // https://leetcode.com/problems/counting-bits/
 
+// Using number of one bits solution for each one
 var countBits = function (n) {
     var res = [0]
     for (var i = 1; i <= n; i++){
@@ -14,6 +15,8 @@ var countBits = function (n) {
     }
     return res
 };
+
+// Also offset solution O(n)
 
 var n = 5
 var res = countBits(n)

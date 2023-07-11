@@ -12,7 +12,15 @@ var missingNumber = (nums) => {
     return total - subtotal
 };
 
+// Another solution without bitwise
+var missingNumber2 = (nums) => {
+    var res = 0
+    while(nums.includes(res)){
+        res++
+    }
+    return res
+}
 
 var nums = [3, 0, 1]
-var res = missingNumber(nums)
+var res = missingNumber2(nums)
 console.log(res)

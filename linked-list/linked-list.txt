@@ -1,0 +1,4 @@
+TODO
+
+Implement single-double-cycle linked-list
+And linked list operations (add, remove etc.)

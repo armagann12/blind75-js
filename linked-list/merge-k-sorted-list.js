@@ -3,6 +3,7 @@
 
 // Using merge-two-sorted list
 // And merging first two lists than using the calculated one to calculate with 3rd list
+// This problem uses both Array and L-list solution
 var mergeKLists = function (lists) {
     // This part is for -> lists = [] testcase
     if(lists.length=== 0){

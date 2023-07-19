@@ -3,11 +3,26 @@
 
 // This question is a tree traversal
 
-// DFS Iterative
+// DFS Iterative using Stack
+var maxDepth = function (root) {
+    var stack = [[root, 1]]
+    var res = 0
+    while (stack.length !== 0) {
+        var el = stack.shift()
+        var node = el[0]
+        var depth = el[1]
+        if (node !== null) {
+            stack.unshift([node.right, depth + 1])
+            stack.unshift([node.left, depth + 1])
+            res = Math.max(res, depth)
+        }
+    }
+    return res
+};
+
 
 
 // DFS Recursive
-// O(n)
 var maxDepth = function (root) {
     if (root === null) {
         return 0
@@ -17,7 +32,6 @@ var maxDepth = function (root) {
 
 
 // BFS using Queue
-// O(n)
 var maxDepth = function (root) {
     if (root === null) {
         return 0

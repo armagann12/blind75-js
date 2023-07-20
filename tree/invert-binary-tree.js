@@ -13,3 +13,5 @@ var invertTree = function(root) {
     invertTree(root.left)
     return root
 };
+
+// Using BFS and setting left -> right , right -> left values

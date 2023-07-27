@@ -16,3 +16,6 @@ var lengthOfLongestSubstring = (s) => {
     }
     return max
 };
+
+var s = "pwwkew"
+console.log(lengthOfLongestSubstring(s))

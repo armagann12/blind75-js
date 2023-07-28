@@ -1,6 +1,7 @@
 // 242. Valid Anagram
 // https://leetcode.com/problems/valid-anagram/
 
+// HashMap my solution could need a refactor
 var isAnagram = function (s, t) {
     var map = {}
     for (var i = 0; i < s.length; i++) {

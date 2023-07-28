@@ -16,6 +16,7 @@ var isAnagram = function (s, t) {
             map[t[j]]--
         }
     }
+    // We can compare length of strings to avoid below code
     var arr = Object.values(map)
     console.log(arr)
     for (var k = 0; k<arr.length; k++){
@@ -28,3 +29,8 @@ var isAnagram = function (s, t) {
 
 var s = "rat"
 var t = "car"
+
+// Sorting the strings and comparing them
+var isAnagram = function (s, t) {
+    return s.split("").sort().join("") === t.split("").sort().join("")
+};

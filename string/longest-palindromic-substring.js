@@ -2,7 +2,7 @@
 // https://leetcode.com/problems/longest-palindromic-substring/
 
 // Using the middle character and going outwords
-// Like two pointer to check for palindromes in 1-go
+// Two pointer to check for the longest palindromes in 1-go
 var longestPalindrome = function (s) {
     var res = ""
     var len = 0
@@ -37,4 +37,5 @@ var longestPalindrome = function (s) {
 // Second solution would be:
 // 1- Get substrings of s
 // 2- Check for the palindromes in substrings
+// 3- Return the longest one
 // Dynamic Programming

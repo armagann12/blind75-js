@@ -33,19 +33,27 @@ WordDictionary.prototype.addWord = function (word) {
  * @return {boolean}
  */
 WordDictionary.prototype.search = function (word) {
-    var current = this.root
-    for (var i = 0; i < word.length; i++) {
-        var char = word[i]
-        if(char === "."){
-            // Uncomplete part
-        }else{
-            if(!current.children[char]){
+    var dfs = (j, root) => {
+        var current = root
+        for (var i = j; i < word.length; i++) {
+            var char = word[i]
+            if (char === ".") {
+                for (var child of Object.values(current.children)) {
+                    if (dfs(i + 1, child)) {
+                        return true
+                    }
+                }
                 return false
+            } else {
+                if (!current.children[char]) {
+                    return false
+                }
+                current = current.children[char]
             }
-            current = current.children[char]
         }
+        return current.end
     }
-    return current.end
+    return dfs(0, this.root)
 };
 
 /** 

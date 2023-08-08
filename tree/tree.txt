@@ -1,0 +1,8 @@
+Trees:
+https://www.techinterviewhandbook.org/algorithms/tree/
+
+Techniques:
+
+-Recursion
+-BFS -> breadth-first search -> search by level
+-DFS -> breadth-first search -> and traverse types -> preorder inorder postorder

@@ -1,0 +1,42 @@
+// 76. Minimum Window Substring
+// https://leetcode.com/problems/minimum-window-substring/
+
+// Brute force using hashmap and iterate over the s string
+
+// Sliding window with a hashmap
+var minWindow = function (s, t) {
+    if (t === "") {
+        return ""
+    }
+    var countT = new Map()
+    var window = new Map()
+    for (char of t) {
+        countT.set(char, 1 + (countT.get(char) || 0))
+    }
+    var have = 0
+    var need = countT.size
+    var l = 0
+    var res = [-1, -1]
+    var resLen = 100000
+    for (var r = 0; r < s.length; r++) {
+        var c = s[r]
+        window.set(c, 1 + (window.get(c) || 0))
+        if (countT.has(c) && window.get(c) === countT.get(c)) {
+            have++
+        }
+        while (have === need) {
+            if (r - l + 1 < resLen) {
+                res = [l, r]
+                resLen = r - l + 1
+            }
+            window.set(s[l], window.get(s[l]) - 1)
+            if(countT.has(s[l]) && window.get(s[l]) < countT.get(s[l])){
+                have--
+            }
+            l++
+        }
+    }
+    var left = res[0]
+    var right = res[1] + 1
+    return s.slice(left, right)
+};

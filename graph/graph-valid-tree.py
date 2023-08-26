@@ -1,6 +1,9 @@
 # 178 · Graph Valid Tree
 # https://www.lintcode.com/problem/178/
 
+# Recursive DFS 
+# Checking if graph is a tree
+# Turning into adjency list and checking if graph creates a loop or unconnected edges
 class Solution:
     def validTree(self, n, edges):
         if not n:

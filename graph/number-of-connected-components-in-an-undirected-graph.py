@@ -19,7 +19,7 @@ class UnionFind:
 
 
 class Solution:
-    def countComponents(self, n: int, edges: List[List[int]]) -> int:
+    def countComponents(self, n, edges):
         dsu = UnionFind()
         for a, b in edges:
             dsu.union(a, b)

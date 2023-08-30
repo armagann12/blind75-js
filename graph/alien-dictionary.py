@@ -4,7 +4,7 @@
 # Recursive DFS
 # Hard graph problem
 class Solution:
-    def alienOrder(self, words: List[str]) -> str:
+    def alienOrder(self, words):
         adj = {char: set() for word in words for char in word}
 
         for i in range(len(words) - 1):
